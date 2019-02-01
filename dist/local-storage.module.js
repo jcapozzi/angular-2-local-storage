@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var local_storage_config_interface_1 = require("./local-storage.config.interface");
 var LocalStorageModule = /** @class */ (function () {
     function LocalStorageModule() {
     }
@@ -16,7 +17,7 @@ var LocalStorageModule = /** @class */ (function () {
         return {
             ngModule: LocalStorageModule_1,
             providers: [
-                { provide: 'LOCAL_STORAGE_SERVICE_CONFIG', useValue: userConfig }
+                { provide: local_storage_config_interface_1.LOCAL_STORAGE_SERVICE_CONFIG, useValue: userConfig }
             ]
         };
     };

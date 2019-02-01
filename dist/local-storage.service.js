@@ -15,6 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
 var operators_1 = require("rxjs/operators");
+var local_storage_config_interface_1 = require("./local-storage.config.interface");
+var i0 = require("@angular/core");
+var i1 = require("./local-storage.config.interface");
 var DEPRECATED = 'This function is deprecated.';
 var LOCAL_STORAGE_NOT_SUPPORTED = 'LOCAL_STORAGE_NOT_SUPPORTED';
 var LocalStorageService = /** @class */ (function () {
@@ -234,11 +237,12 @@ var LocalStorageService = /** @class */ (function () {
             this.notifyOptions.removeItem = removeItem;
         }
     };
+    LocalStorageService.ngInjectableDef = i0.defineInjectable({ factory: function LocalStorageService_Factory() { return new LocalStorageService(i0.inject(i1.LOCAL_STORAGE_SERVICE_CONFIG, 8)); }, token: LocalStorageService, providedIn: "root" });
     LocalStorageService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
         }),
-        __param(0, core_1.Optional()), __param(0, core_1.Inject('LOCAL_STORAGE_SERVICE_CONFIG')),
+        __param(0, core_1.Optional()), __param(0, core_1.Inject(local_storage_config_interface_1.LOCAL_STORAGE_SERVICE_CONFIG)),
         __metadata("design:paramtypes", [Object])
     ], LocalStorageService);
     return LocalStorageService;
